@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoItem from './TodoItem/TodoItem';
+import TodoItem from './components/TodoItem';
 
 class App extends Component {
   constructor() {
     super();
     this.todoItems = [
-      'di choi',
-      'di ngu',
-      'di ngu'
+      {title: 'di hoc', isComplete: true},
+      {title: 'di ngu'},
+      {title: 'di choi'}
     ];
   }
 
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
           {
-            this.todoItems.map((item, index) => <TodoItem key={index} title={item}/>)
+            this.todoItems.map((item, index) => <TodoItem key={index} item={item}/>)
           }
       </div>
     );
